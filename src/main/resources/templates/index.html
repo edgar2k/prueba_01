@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio | Portal SDD</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="home-page">
+<header class="topbar">
+    <a class="wordmark" th:href="@{/}" aria-label="Portal SDD, inicio"><span class="wordmark-symbol">P</span> PORTAL <span class="wordmark-light">/ SDD</span></a>
+    <div class="topbar-actions">
+        <span class="user-label"><span class="status-dot"></span> Sesión de <strong th:text="${username}">admin</strong></span>
+        <form th:action="@{/logout}" method="post">
+            <button class="button button-quiet" type="submit">Cerrar sesión <span aria-hidden="true">↗</span></button>
+        </form>
+    </div>
+</header>
+
+<main class="dashboard">
+    <section class="welcome-row">
+        <div>
+            <p class="eyebrow">ESPACIO DE TRABAJO <span class="accent-line"></span> 01</p>
+            <h1>Hola, <span th:text="${username}">admin</span>.</h1>
+            <p class="welcome-copy">Tu portal está listo. Este es el punto de partida para tus prácticas.</p>
+        </div>
+        <div class="date-stamp"><span>ESTADO</span><strong>EN LÍNEA</strong></div>
+    </section>
+
+    <section class="content-grid" aria-label="Resumen del portal">
+        <article class="feature-panel">
+            <div class="feature-topline"><span class="eyebrow">BASE DEL PROYECTO</span><span class="feature-index">01 — 03</span></div>
+            <h2>Especificar.<br>Construir.<br><em>Verificar.</em></h2>
+            <p>El flujo de trabajo SDD conecta requisitos, criterios de aceptación y código verificable.</p>
+            <a class="text-link" href="/" aria-label="Sección de especificaciones, próximamente">Explorar el espacio <span aria-hidden="true">↗</span></a>
+            <div class="feature-art" aria-hidden="true"><span class="art-ring ring-one"></span><span class="art-ring ring-two"></span><span class="art-core"></span></div>
+        </article>
+
+        <div class="summary-column">
+            <article class="summary-item">
+                <div class="summary-number">01</div>
+                <div><p class="eyebrow">ESPECIFICACIÓN</p><h3>Define el resultado</h3><p>Requisitos y criterios de aceptación claros.</p></div>
+                <span class="summary-arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="summary-item">
+                <div class="summary-number">02</div>
+                <div><p class="eyebrow">PLAN</p><h3>Traza el camino</h3><p>Decisiones técnicas antes de implementar.</p></div>
+                <span class="summary-arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="summary-item">
+                <div class="summary-number">03</div>
+                <div><p class="eyebrow">TAREAS</p><h3>Avanza por etapas</h3><p>Cambios pequeños, pruebas y revisión.</p></div>
+                <span class="summary-arrow" aria-hidden="true">↗</span>
+            </article>
+        </div>
+    </section>
+    <footer class="page-footer"><span>PORTAL SDD · DEMO LOCAL</span><span>JAVA 17 <i></i> SPRING BOOT</span></footer>
+</main>
+</body>
+</html>
